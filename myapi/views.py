@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import User, ActivityPeriod
 import requests, json
 from django.http import JsonResponse
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 # Since there wasn't a lot of informationa available about the assignment, I have made a few assumptions.
@@ -13,10 +14,14 @@ def send_json(request):
     if request.method == 'POST':
         content = json.loads(request.body)
         id_list = content['id_list']
+        if (len(id_list) < 1):
+            return HttpResponseRedirect('No user selected')
         members_list = []
         for uid in id_list:
             user_obj = User.objects.filter(id = uid).values()
             user_list = list(user_obj)
+            if len(user_list) < 1:
+                return HttpResponseRedirect('Invalid Userid')
             activity_period = ActivityPeriod.objects.filter(user = uid).values()
             activity_period_list = list(activity_period)
             member_dictionary =  user_list[0]
@@ -28,3 +33,5 @@ def send_json(request):
             members_list.append(member_dictionary)
             final_dictionary = {"ok" : True, "members" : members_list}
         return JsonResponse(final_dictionary, safe=False)
+    else:
+        return HttpResponseRedirect('Invalid Method')
