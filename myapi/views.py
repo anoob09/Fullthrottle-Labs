@@ -4,6 +4,11 @@ import requests, json
 from django.http import JsonResponse
 # Create your views here.
 
+# Since there wasn't a lot of informationa available about the assignment, I have made a few assumptions.
+# 1. The request will a post request.
+# 2. The request will be containing a json which will contain a list of id for which the data is to be returned
+# 3. I date-time value in ActivityPeriods is string (I had little time so I used string to store them).
+
 def send_json(request):
     if request.method == 'POST':
         content = json.loads(request.body)
