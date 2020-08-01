@@ -20,7 +20,7 @@ class User(models.Model):
         return reverse("_detail", kwargs={"pk": self.pk})
 
 class ActivityPeriod(models.Model):
-    user = models.ForeignKey(User, verbose_name="User ID", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     start_time = models.CharField(max_length=120)
     end_time = models.CharField(max_length=120)
     def __str__(self):

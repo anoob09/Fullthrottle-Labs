@@ -17,11 +17,13 @@ def send_json(request):
         if (len(id_list) < 1):
             return HttpResponseRedirect('No user selected')
         members_list = []
+
+        final_dictionary = {}
         for uid in id_list:
             user_obj = User.objects.filter(id = uid).values()
             user_list = list(user_obj)
             if len(user_list) < 1:
-                return HttpResponseRedirect('Invalid Userid')
+                continue
             activity_period = ActivityPeriod.objects.filter(user = uid).values()
             activity_period_list = list(activity_period)
             member_dictionary =  user_list[0]
