@@ -27,6 +27,71 @@
 ## App
 - The project consists of only 1 app i.e `myapi`.
 
+![POST/sendjson](https://fullthorottle-labs.herokuapp.com/sendjson/)
+
+POST request to get JSON data
+<br>*Requires Authentication*
+
+#### Request Body
+| Feild        | Description                             | Required |
+| :----------- | :-------------------------------------- | :------- |
+| id_list          | The of id for which JSON data is required                 | True     |
+
+Example of JSON to be included in post body
+
+`{"id_list" : ["W012A3CDE", "W07QCRPA4"]}`
+
+#### Response
+| Status Code | Message                      | Reason                                                         |
+| :--         | :--------------------------- | :------------------------------------------------------------- |
+| 200         | Data send        | User JSON data send successfully                                    |
+
+Example of JSON data recieved 
+`{
+    "ok": true,
+    "members": [
+        {
+            "id": "W012A3CDE",
+            "real_name": "Egon Spengler",
+            "tz": "America/Los_Angeles",
+            "activity_periods": [
+                {
+                    "start_time": "Feb 1 2020  1:33PM",
+                    "end_time": "Feb 1 2020 1:54PM"
+                },
+                {
+                    "start_time": "Mar 1 2020  11:11AM",
+                    "end_time": "Mar 1 2020 2:00PM"
+                },
+                {
+                    "start_time": "Mar 16 2020  5:33PM",
+                    "end_time": "Mar 16 2020 8:02PM"
+                }
+            ]
+        },
+        {
+            "id": "W07QCRPA4",
+            "real_name": "Glinda Southgood",
+            "tz": "Asia/Kolkata",
+            "activity_periods": [
+                {
+                    "start_time": "Feb 1 2020  1:33PM",
+                    "end_time": "Feb 1 2020 1:54PM"
+                },
+                {
+                    "start_time": "Mar 1 2020  11:11AM",
+                    "end_time": "Mar 1 2020 2:00PM"
+                },
+                {
+                    "start_time": "Mar 16 2020  5:33PM",
+                    "end_time": "Mar 16 2020 8:02PM"
+                }
+            ]
+        }
+    ]
+}`
+
+
 ## Building
 
 It is best to use the python `virtualenv` tool to build locally:
