@@ -1,5 +1,7 @@
 # FullThrottle Labs Django App
 
+**The API might return empty dictionary for the example id becasue I am using in-built SQLLite database and hence the data is lost after each commit to the repository.**
+
 **Since there wasn't a lot of information available about the assignment, I have made a few assumptions.** 
 
 ## Custom Management Command
