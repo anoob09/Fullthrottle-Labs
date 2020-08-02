@@ -1,1 +1,1 @@
-web: gunicorn plaindjango.wsgi:application --log-file -
+web: gunicorn fullthrottle_labs.wsgi:application --log-file -
