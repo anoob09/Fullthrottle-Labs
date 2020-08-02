@@ -27,6 +27,8 @@
 ## App
 - The project consists of only 2 apps `fullthrottle_labs` & `myapi`.
 
+## API ENDPOINTS
+
 ![POST/sendjson](https://fullthorottle-labs.herokuapp.com/sendjson/)
 
 POST request to get JSON data
