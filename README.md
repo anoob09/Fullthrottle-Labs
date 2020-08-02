@@ -1,6 +1,6 @@
 # FullThrottle Labs Django App
 
-**Since there wasn't a lot of informationa available about the assignment, I have made a few assumptions.** 
+**Since there wasn't a lot of information available about the assignment, I have made a few assumptions.** 
 
 ## Custom Management Command
 ### Insert into User
