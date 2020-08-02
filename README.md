@@ -25,7 +25,7 @@
 - The id field in User is Foreign Key to user field in ActivityPeriod.
 
 ## App
-- The project consists of only 1 app i.e `myapi`.
+- The project consists of only 2 apps `fullthrottle_labs` & `myapi`.
 
 ![POST/sendjson](https://fullthorottle-labs.herokuapp.com/sendjson/)
 
