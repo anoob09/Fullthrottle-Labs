@@ -19,6 +19,7 @@
 
 ## Models
 - User is the main table having 3 id (Primary Key), real_name and tz as columns.
+- ActivityPeriods the table having 3 user (Foreign Key with User.id as Reference, on_delete.CASCADE), start_time and end_time as columns.
 - I assumed the relation between two tables is one-to-many where one record from User is related to many records from ActivityPeriod since a user can have more then one session.
 - I believe this is the best way to store data by preserving the relationship between models.
 - The id field in User is Foreign Key to user field in ActivityPeriod.
